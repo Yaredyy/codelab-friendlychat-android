@@ -79,8 +79,6 @@ class MainActivity : AppCompatActivity() {
 
         if(auth.currentUser==null) {
             startActivity(Intent(this, SignInActivity::class.java))
-            finish()
-            return
         }
 
         db = Firebase.database
