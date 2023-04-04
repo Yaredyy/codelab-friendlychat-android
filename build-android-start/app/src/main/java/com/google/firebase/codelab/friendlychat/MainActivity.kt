@@ -60,13 +60,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: FriendlyMessageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        //setup emulator debugger
+
         if (BuildConfig.DEBUG) {
             Firebase.database.useEmulator("10.0.2.2", 9000)
             Firebase.auth.useEmulator("10.0.2.2", 9099)
             Firebase.storage.useEmulator("10.0.2.2", 9199)
         }
-
-        super.onCreate(savedInstanceState)
 
         // This codelab uses View Binding
         // See: https://developer.android.com/topic/libraries/view-binding
